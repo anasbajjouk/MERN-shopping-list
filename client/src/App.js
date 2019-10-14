@@ -1,10 +1,14 @@
 import React from 'react';
+
+import  AppNavbar  from './components/AppNavbar';
+import  ShoppingList  from './components/ShoppingList';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <h1>hello</h1>
+      <AppNavbar />
+      <ShoppingList />
     </div>
   );
 }
