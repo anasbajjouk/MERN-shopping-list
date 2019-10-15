@@ -13,10 +13,12 @@ const app = express();
 app.use(bodyParser.json());
 
 //DB config
-const DB = process.env.MONGO_URI.replace(
-  '<PASSWORD>',
-  process.env.DATABASE_PASSWORD,
-);
+// const DB = process.env.MONGO_URI.replace(
+//   '<PASSWORD>',
+//   process.env.DATABASE_PASSWORD,
+// );
+
+const DB = process.env.MONGO_URI;
 
 //Connect to mongo
 mongoose
