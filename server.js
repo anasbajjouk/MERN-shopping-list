@@ -1,16 +1,18 @@
 require('dotenv').config({ path: './config.env' });
 const express = require('express');
 const mongoose = require('mongoose');
-const bodyParser = require('body-parser');
+
 const path = require('path');
 
 //Routers
 const items = require('./routes/api/items');
+const users = require('./routes/api/users');
+const auth = require('./routes/api/auth');
 
 const app = express();
 
 // BodyParser Middleware
-app.use(bodyParser.json());
+app.use(express.json());
 
 //DB config
 // const DB = process.env.MONGO_URI.replace(
@@ -33,6 +35,8 @@ mongoose
 
 //Use routes
 app.use('/api/items', items);
+app.use('/api/users', users);
+app.use('/api/auth', auth);
 
 //Serve static assets if in production
 if (process.env.NODE_ENV === 'production') {
